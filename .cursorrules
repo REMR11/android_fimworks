@@ -1,0 +1,33 @@
+# Pipeline de Desarrollo - Proyecto MR100823
+
+Este archivo contiene las reglas obligatorias para cualquier agente que realice cambios en este proyecto. El objetivo es mantener la consistencia del sistema de "Ejercicios" basado en Cards.
+
+## Estructura del Proyecto
+El proyecto utiliza un sistema dinámico para listar ejercicios en el Home (`MainActivity`).
+
+### Reglas para crear un nuevo Ejercicio/Vista:
+1. **Crear Activity y Layout:**
+   - Crear la nueva Activity en `edu.ufg.mr100823`.
+   - Crear el layout correspondiente en `res/layout`.
+
+2. **Registro en AndroidManifest.xml:**
+   - Toda nueva Activity DEBE ser registrada en el `AndroidManifest.xml`.
+   - Usar `android:exported="false"` a menos que se requiera lo contrario.
+
+3. **Integración con el Home (Pipeline Obligatorio):**
+   - NO modificar el `activity_main.xml` para agregar botones manuales.
+   - Localizar `MainActivity.java`.
+   - En el método `onCreate`, añadir una nueva instancia a `listaEjercicios` usando el modelo `Ejercicio`:
+     ```java
+     listaEjercicios.add(new Ejercicio("Título del Ejercicio", "Descripción breve", NuevaActivity.class));
+     ```
+
+4. **Estilo y Consistencia:**
+   - Usar `Material3` y `CardView` para mantener la estética del Home.
+   - Las strings de resultado deben ser claras para el usuario.
+   - Mantener el idioma español para la interfaz de usuario.
+
+## Componentes Clave
+- `Ejercicio.java`: Modelo de datos para los ítems del menú.
+- `EjercicioAdapter.java`: Adaptador del RecyclerView que gestiona la navegación automática.
+- `MainActivity.java`: Punto de entrada que actúa como catálogo de ejercicios.

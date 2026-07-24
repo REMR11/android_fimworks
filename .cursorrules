@@ -27,6 +27,9 @@ El proyecto utiliza un sistema dinámico para listar ejercicios en el Home (`Mai
    - Las strings de resultado deben ser claras para el usuario.
    - Mantener el idioma español para la interfaz de usuario.
 
+5. **Eventos y Acciones:**
+   - Las acciones de los botones (como clics) deben estar enlazadas preferiblemente mediante el atributo `android:onClick` en el archivo XML, apuntando a un método público en la Activity correspondiente que reciba un objeto `View` como parámetro.
+
 ## Componentes Clave
 - `Ejercicio.java`: Modelo de datos para los ítems del menú.
 - `EjercicioAdapter.java`: Adaptador del RecyclerView que gestiona la navegación automática.

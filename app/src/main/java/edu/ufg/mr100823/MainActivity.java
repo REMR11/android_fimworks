@@ -14,7 +14,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rvEjercicios;
-    private EjercicioAdapter adapter;
+    private HomeAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +31,24 @@ public class MainActivity extends AppCompatActivity {
         rvEjercicios = findViewById(R.id.rvEjercicios);
         rvEjercicios.setLayoutManager(new LinearLayoutManager(this));
 
-        List<Ejercicio> listaEjercicios = new ArrayList<>();
-        // Agregando ejercicios al pipeline
-        listaEjercicios.add(new Ejercicio("Calculadora de Suma", "Suma dos números decimales.", SumaActivity.class));
-        listaEjercicios.add(new Ejercicio("Autenticación Simulada", "Acceso con ImageButton y validación de clave.", LoginActivity.class));
-        listaEjercicios.add(new Ejercicio("RadioGroup y RadioButton", "Selección única para sumar o restar dos valores.", RadioButtonActivity.class));
-        listaEjercicios.add(new Ejercicio("Control CheckBox", "Selección múltiple para sumar y/o restar.", CheckBoxActivity.class));
-        listaEjercicios.add(new Ejercicio("Control Spinner", "Lista desplegable para seleccionar operación matemática.", SpinnerActivity.class));
+        // Creación de la Sección 1
+        List<Ejercicio> ejerciciosSeccion1 = new ArrayList<>();
+        ejerciciosSeccion1.add(new Ejercicio("1. Calculadora de Suma", "Suma dos números decimales.", SumaActivity.class));
+        ejerciciosSeccion1.add(new Ejercicio("2. Autenticación Simulada", "Acceso con ImageButton y validación de clave.", LoginActivity.class));
+        ejerciciosSeccion1.add(new Ejercicio("3. RadioGroup y RadioButton", "Selección única para sumar o restar dos valores.", RadioButtonActivity.class));
+        ejerciciosSeccion1.add(new Ejercicio("4. Control CheckBox", "Selección múltiple para sumar y/o restar.", CheckBoxActivity.class));
+        ejerciciosSeccion1.add(new Ejercicio("5. Listas y Adaptadores", "Uso de ListView básico (Ejemplo).", MainActivity.class)); // Ejemplo si falta uno
+        ejerciciosSeccion1.add(new Ejercicio("6. Control Spinner", "Lista desplegable para seleccionar operación matemática.", SpinnerActivity.class));
 
-        adapter = new EjercicioAdapter(listaEjercicios, this);
+        List<Seccion> listaSecciones = new ArrayList<>();
+        listaSecciones.add(new Seccion("Sección 1: Controles Básicos", ejerciciosSeccion1));
+
+        // Ejemplo de cómo agregar una nueva sección en el futuro:
+        // List<Ejercicio> ejerciciosSeccion2 = new ArrayList<>();
+        // ejerciciosSeccion2.add(new Ejercicio("7. Nuevo Ejercicio", "Desc...", NuevaActivity.class));
+        // listaSecciones.add(new Seccion("Sección 2: Avanzado", ejerciciosSeccion2));
+
+        adapter = new HomeAdapter(listaSecciones, this);
         rvEjercicios.setAdapter(adapter);
     }
 }

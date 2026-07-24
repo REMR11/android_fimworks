@@ -6,28 +6,32 @@ Este archivo contiene las reglas obligatorias para cualquier agente que realice 
 El proyecto utiliza un sistema dinámico para listar ejercicios en el Home (`MainActivity`).
 
 ### Reglas para crear un nuevo Ejercicio/Vista:
-1. **Crear Activity y Layout:**
+1. **Numeración Obligatoria:**
+   - Todos los ejercicios deben incluir su número correlativo al inicio del título.
+   - El último ejercicio registrado es el **"6. Control Spinner"**. Los siguientes deben seguir la secuencia (7, 8, 9, etc.).
+
+2. **Crear Activity y Layout:**
    - Crear la nueva Activity en `edu.ufg.mr100823`.
    - Crear el layout correspondiente en `res/layout`.
 
-2. **Registro en AndroidManifest.xml:**
+3. **Registro en AndroidManifest.xml:**
    - Toda nueva Activity DEBE ser registrada en el `AndroidManifest.xml`.
    - Usar `android:exported="false"` a menos que se requiera lo contrario.
 
-3. **Integración con el Home (Pipeline Obligatorio):**
+4. **Integración con el Home (Pipeline Obligatorio):**
    - NO modificar el `activity_main.xml` para agregar botones manuales.
    - Localizar `MainActivity.java`.
-   - En el método `onCreate`, añadir una nueva instancia a `listaEjercicios` usando el modelo `Ejercicio`:
+   - En el método `onCreate`, añadir una nueva instancia a `listaEjercicios` respetando la numeración:
      ```java
-     listaEjercicios.add(new Ejercicio("Título del Ejercicio", "Descripción breve", NuevaActivity.class));
+     listaEjercicios.add(new Ejercicio("7. Título del Ejercicio", "Descripción breve", NuevaActivity.class));
      ```
 
-4. **Estilo y Consistencia:**
+5. **Estilo y Consistencia:**
    - Usar `Material3` y `CardView` para mantener la estética del Home.
    - Las strings de resultado deben ser claras para el usuario.
    - Mantener el idioma español para la interfaz de usuario.
 
-5. **Eventos y Acciones:**
+6. **Eventos y Acciones:**
    - Las acciones de los botones (como clics) deben estar enlazadas preferiblemente mediante el atributo `android:onClick` en el archivo XML, apuntando a un método público en la Activity correspondiente que reciba un objeto `View` como parámetro.
 
 ## Componentes Clave

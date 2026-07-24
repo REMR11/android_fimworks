@@ -36,6 +36,10 @@
             android:name=".CheckBoxActivity"
             android:exported="false"
             android:label="Operaciones con CheckBox" />
+        <activity
+            android:name=".SpinnerActivity"
+            android:exported="false"
+            android:label="Control Spinner" />
     </application>
 
 </manifest>

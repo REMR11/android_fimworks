@@ -28,6 +28,14 @@
             android:name=".LoginActivity"
             android:exported="false"
             android:label="Autenticación Simulada" />
+        <activity
+            android:name=".RadioButtonActivity"
+            android:exported="false"
+            android:label="Operaciones con RadioButton" />
+        <activity
+            android:name=".CheckBoxActivity"
+            android:exported="false"
+            android:label="Operaciones con CheckBox" />
     </application>
 
 </manifest>

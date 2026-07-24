@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         // Agregando ejercicios al pipeline
         listaEjercicios.add(new Ejercicio("Calculadora de Suma", "Suma dos números decimales.", SumaActivity.class));
         listaEjercicios.add(new Ejercicio("Autenticación Simulada", "Acceso con ImageButton y validación de clave.", LoginActivity.class));
+        listaEjercicios.add(new Ejercicio("RadioGroup y RadioButton", "Selección única para sumar o restar dos valores.", RadioButtonActivity.class));
+        listaEjercicios.add(new Ejercicio("Control CheckBox", "Selección múltiple para sumar y/o restar.", CheckBoxActivity.class));
 
         adapter = new EjercicioAdapter(listaEjercicios, this);
         rvEjercicios.setAdapter(adapter);

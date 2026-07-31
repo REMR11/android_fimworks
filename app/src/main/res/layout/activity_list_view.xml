@@ -12,11 +12,37 @@
         android:id="@+id/tvResultadoPoblacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:text="Seleccione un país para ver su población"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/btnOrdenAlfabetico"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nombre (A-Z)"
+            android:textSize="12sp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnOrdenPoblacion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Población (Máx-Mín)"
+            android:textSize="12sp"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lvPaises"

@@ -5,26 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp"
     tools:context=".ImageButtonActivity">
 
     <TextView
         android:id="@+id/tvEstadoLlamada"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Estado"
-        android:textSize="34sp"
-        android:layout_marginBottom="32dp" />
+        android:text="Marcador Real"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
-    <ImageButton
-        android:id="@+id/ib1"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/etNumero"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_phone"
-        android:onClick="llamar"
-        android:contentDescription="Botón de llamar"
-        android:padding="20dp"
-        android:background="?attr/selectableItemBackgroundBorderless" />
+        android:hint="Ingrese número"
+        android:inputType="phone"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnSeleccionarContacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar de Contactos"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Teclado Numérico -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <Button android:text="1" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+        <Button android:text="2" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+        <Button android:text="3" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+
+        <Button android:text="4" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+        <Button android:text="5" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+        <Button android:text="6" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+
+        <Button android:text="7" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+        <Button android:text="8" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+        <Button android:text="9" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+
+        <Button android:text="*" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+        <Button android:text="0" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+        <Button android:text="#" android:onClick="onDigitClick" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_columnWeight="1" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/ibLlamar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_phone"
+            android:contentDescription="Llamar"
+            android:padding="20dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:drawable/btn_default" />
+
+        <ImageButton
+            android:id="@+id/ibBorrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_input_delete"
+            android:contentDescription="Borrar"
+            android:padding="20dp"
+            android:background="@android:drawable/btn_default" />
+    </LinearLayout>
 
 </LinearLayout>

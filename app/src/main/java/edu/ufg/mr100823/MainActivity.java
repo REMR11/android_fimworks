@@ -37,16 +37,17 @@ public class MainActivity extends AppCompatActivity {
         ejerciciosSeccion1.add(new Ejercicio("2. Autenticación Simulada", "Acceso con ImageButton y validación de clave.", LoginActivity.class));
         ejerciciosSeccion1.add(new Ejercicio("3. RadioGroup y RadioButton", "Selección única para sumar o restar dos valores.", RadioButtonActivity.class));
         ejerciciosSeccion1.add(new Ejercicio("4. Control CheckBox", "Selección múltiple para sumar y/o restar.", CheckBoxActivity.class));
-        ejerciciosSeccion1.add(new Ejercicio("5. Listas y Adaptadores", "Uso de ListView básico (Ejemplo).", MainActivity.class)); // Ejemplo si falta uno
+        ejerciciosSeccion1.add(new Ejercicio("5. Listas y Adaptadores", "Uso de ListView básico (Ejemplo).", MainActivity.class));
         ejerciciosSeccion1.add(new Ejercicio("6. Control Spinner", "Lista desplegable para seleccionar operación matemática.", SpinnerActivity.class));
+
+        // Creación de la Sección 2
+        List<Ejercicio> ejerciciosSeccion2 = new ArrayList<>();
+        ejerciciosSeccion2.add(new Ejercicio("7. Control ListView", "Lista interactiva de países y población.", ListViewActivity.class));
+        ejerciciosSeccion2.add(new Ejercicio("8. Control ImageButton", "Botón con imagen para simular una llamada.", ImageButtonActivity.class));
 
         List<Seccion> listaSecciones = new ArrayList<>();
         listaSecciones.add(new Seccion("Sección 1: Controles Básicos", ejerciciosSeccion1));
-
-        // Ejemplo de cómo agregar una nueva sección en el futuro:
-        // List<Ejercicio> ejerciciosSeccion2 = new ArrayList<>();
-        // ejerciciosSeccion2.add(new Ejercicio("7. Nuevo Ejercicio", "Desc...", NuevaActivity.class));
-        // listaSecciones.add(new Seccion("Sección 2: Avanzado", ejerciciosSeccion2));
+        listaSecciones.add(new Seccion("Sección 2", ejerciciosSeccion2));
 
         adapter = new HomeAdapter(listaSecciones, this);
         rvEjercicios.setAdapter(adapter);

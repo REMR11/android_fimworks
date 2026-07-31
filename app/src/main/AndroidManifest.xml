@@ -40,6 +40,14 @@
             android:name=".SpinnerActivity"
             android:exported="false"
             android:label="Control Spinner" />
+        <activity
+            android:name=".ListViewActivity"
+            android:exported="false"
+            android:label="Control ListView" />
+        <activity
+            android:name=".ImageButtonActivity"
+            android:exported="false"
+            android:label="Control ImageButton" />
     </application>
 
 </manifest>
